@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roleta Premiada - Simulação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Roleta Premiada</div>
+            <nav>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Mesas</a></li>
+                    <li><a href="#">Ranking</a></li>
+                    <li><a href="#">Minha Conta</a></li>
+                </ul>
+            </nav>
+            <div class="user-balance">Saldo: R$ 0,00</div>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="container">
+            <div class="roulette-block">
+                <h1>Gire a Roleta e Ganhe Prêmios!</h1>
+                <p>Cadastre-se agora e ganhe 3 giros grátis para começar a sua jornada.</p>
+                
+                <!-- Roleta Visual -->
+                <div class="roulette-container">
+                    <div class="roulette-wheel" id="rouletteWheel">
+                        <div class="segment empty">Vazio</div>
+                        <div class="segment prize">R$ 20</div>
+                        <div class="segment empty">Vazio</div>
+                        <div class="segment prize">R$ 35</div>
+                        <div class="segment empty">Vazio</div>
+                        <div class="segment prize">R$ 50</div>
+                        <div class="segment empty">Vazio</div>
+                        <div class="segment empty">Vazio</div>
+                    </div>
+                    <div class="roulette-pointer"></div>
+                </div>
+                
+                <div class="roulette-controls">
+                    <button class="btn-register" id="registerBtn">Cadastrar-se e Ganhar Giros Grátis</button>
+                    <button class="btn-spin" id="spinBtn" style="display: none;">Girar Roleta</button>
+                    <button class="btn-stop" id="stopBtn" style="display: none;">Parar</button>
+                </div>
+                
+                <div class="free-spins-info" id="freeSpinsInfo" style="display: none;">
+                    <p>Giros grátis restantes: <span id="freeSpinsCount">3</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="tables" class="container">
+            <h2>Escolha sua Mesa</h2>
+            <div class="table-cards">
+                <!-- Mesa Iniciante -->
+                <div class="card beginner">
+                    <h3>Mesa Iniciante</h3>
+                    <p>Entrada: R$ 5,00 | R$ 10,00</p>
+                    <div class="prizes">
+                        <span>Prêmios:</span>
+                        <span>R$ 20,00</span>
+                        <span>R$ 35,00</span>
+                        <span>R$ 50,00</span>
+                    </div>
+                    <button class="btn-play">Jogar</button>
+                </div>
+
+                <!-- Mesa Intermediária -->
+                <div class="card intermediate">
+                    <h3>Mesa Intermediária</h3>
+                    <p>Entrada: R$ 20,00 | R$ 50,00</p>
+                    <div class="prizes">
+                        <span>Prêmios:</span>
+                        <span>R$ 75,00</span>
+                        <span>R$ 120,00</span>
+                        <span>R$ 200,00</span>
+                    </div>
+                    <button class="btn-play">Jogar</button>
+                </div>
+
+                <!-- Mesa High Roller -->
+                <div class="card high-roller">
+                    <h3>Mesa High Roller</h3>
+                    <p>Entrada: R$ 100,00 | R$ 200,00</p>
+                    <div class="prizes">
+                        <span>Prêmios:</span>
+                        <span>R$ 350,00</span>
+                        <span>R$ 500,00</span>
+                        <span>R$ 750,00</span>
+                    </div>
+                    <button class="btn-play">Jogar</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="ranking" class="container">
+            <h2>Ranking dos Vencedores</h2>
+            <div class="ranking-list">
+                <!-- Exemplo de item do ranking -->
+                <div class="ranking-item">
+                    <span>1. João Silva</span>
+                    <span>R$ 1.500,00</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="notifications" class="container">
+            <h2>Notificações em Tempo Real</h2>
+            <div class="notification-list">
+                <!-- Exemplo de notificação -->
+                <div class="notification-item">
+                    <span>Maria ganhou R$ 200 na mesa de R$ 100</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Este site é uma simulação para fins de diversão. Não envolve dinheiro real.</p>
+            <nav>
+                <ul>
+                    <li><a href="#">Termos de Uso</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">Suporte</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- Modal de Login/Cadastro -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Cadastre-se ou Faça Login</h2>
+            
+            <div class="social-login">
+                <button class="btn-social google">
+                    <span>🔍</span> Continuar com Google
+                </button>
+                <button class="btn-social facebook">
+                    <span>📘</span> Continuar com Facebook
+                </button>
+            </div>
+            
+            <div class="divider">
+                <span>ou</span>
+            </div>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Seu e-mail" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" placeholder="Sua senha" required>
+                </div>
+                <button type="submit" class="btn-submit">Entrar</button>
+            </form>
+            
+            <div class="form-footer">
+                <p>Não tem conta? <a href="#" id="switchToRegister">Cadastre-se aqui</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Resultado -->
+    <div id="resultModal" class="modal">
+        <div class="modal-content result-modal">
+            <h2 id="resultTitle">Parabéns!</h2>
+            <div class="result-content">
+                <div class="prize-amount" id="prizeAmount">R$ 0,00</div>
+                <p id="resultMessage">Você ganhou um prêmio!</p>
+            </div>
+            <button class="btn-continue" id="continueBtn">Continuar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
